@@ -6,7 +6,6 @@ import { storiesOf } from '@storybook/react'
 
 import Spinner from '../src/components/react/Indicator'
 import Button from '../src/components/react/Button/index'
-import Swipe from '../src/components/react/Swiper'
 import Calendar from '../src/components/react/Calendar/index'
 import LazyBlurImage from '../src/components/react/LazyBlurImage'
 
@@ -20,9 +19,6 @@ const uF = raw => `(UNFINISHED) ${raw}`
 
 storiesOf(uF('Button'), module)
   .add('default', () => <Button text="UNFINISHED Button" />)
-
-storiesOf(uF('Swipe'), module)
-  .add('default', () => <Swipe />)
 
 storiesOf(uF('Calendar'), module)
   .add('default', () => <Calendar />)
