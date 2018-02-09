@@ -5,7 +5,7 @@ import styles from '@style/Toast/index.sass'
 import { warning } from '@shared/warning'
 import { computeSize, validateSize } from '@shared/size'
 
-class Toast extends React.Component {
+class Toast extends Component {
   static propTypes = {
     colorLeft: PropTypes.string,
     colorRight: PropTypes.string,
@@ -56,7 +56,6 @@ class Toast extends React.Component {
     const heightComputed = computeSize(height)
     const widthComputed = computeSize(width)
     const textFontSizeComputed = computeSize(text.fontSize)
-    console.log(text)
     if (text.prop) {
       return (
         <div className={styles['ugli-toast']}
