@@ -29,7 +29,7 @@ class Toast extends Component {
         PropTypes.number,
       ]),
     }),
-    style: PropTypes.string,
+    gradientStyle: PropTypes.string,
   }
   // #9795F0
   // #FBC8D4
@@ -45,14 +45,14 @@ class Toast extends Component {
       color: 'white',
       fontWeight: '900',
     },
-    style: 'to bottom right',
+    gradientStyle: 'to bottom right',
   }
   componentWillReceiveProps({ height, width }) {
     warning(validateSize(height), `Bad size ${height}`)
     warning(validateSize(width), `Bad size ${width}`)
   }
   render() {
-    const { colorLeft, colorRight, height, width, text, style, ...other } = this.props
+    const { colorLeft, colorRight, height, width, text, gradientStyle, ...other } = this.props
     const heightComputed = computeSize(height)
     const widthComputed = computeSize(width)
     const textFontSizeComputed = computeSize(text.fontSize)
@@ -62,7 +62,7 @@ class Toast extends Component {
           style={{
                height: heightComputed,
                width: widthComputed,
-               background: `linear-gradient(${style}, ${colorLeft},${colorRight})`,
+               background: `linear-gradient(${gradientStyle}, ${colorLeft},${colorRight})`,
              }}
           {...other}
         >
@@ -84,7 +84,7 @@ class Toast extends Component {
         style={{
                height: heightComputed,
                width: widthComputed,
-               background: `linear-gradient(${style}, ${colorLeft},${colorRight})`,
+               background: `linear-gradient(${gradientStyle}, ${colorLeft},${colorRight})`,
              }}
         {...other}
       />
