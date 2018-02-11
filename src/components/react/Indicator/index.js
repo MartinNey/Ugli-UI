@@ -1,3 +1,3 @@
-import Spinner from './Spinner'
+import Indicator from './Indicator'
 
-export default Spinner
+export default Indicator
