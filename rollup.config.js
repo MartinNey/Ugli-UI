@@ -12,12 +12,13 @@ import fs from 'fs'
 // The babel plugin will not load .babelrc by NODE_ENV.
 // We do it ourselves.
 const babelrc = JSON.parse(fs.readFileSync('.babelrc'))
-const packageJson = JSON.parse(fs.readFileSync('package.json'))
 
 export default {
-  input: './index.js',
+  input: fs.existsSync('./rollup.entry.temp.js')
+    ? './rollup.entry.temp.js'
+    : './index.js',
   output: {
-    file: 'build/ugli-ui.js',
+    file: 'build/dist/ugli-ui.js',
     format: 'es',
     banner: '/* eslint-disable */',
   },
@@ -30,7 +31,7 @@ export default {
       extract: true,
       minimize: false,
       modules: true,
-      to: 'build/ugli-ui.css',
+      to: 'build/dist/ugli-ui.css',
       plugins: [autoprefixer()],
     }),
     alias({
@@ -51,5 +52,6 @@ export default {
     commonjs(),
   ],
   // all dependencies will be regarded as external
-  external: Object.keys(packageJson.dependencies),
+  /* eslint-disable global-require */
+  external: Object.keys(require('./package.json').dependencies),
 }

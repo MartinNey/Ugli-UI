@@ -1,12 +1,14 @@
 # Ugli-UI
 
+CircleCI: [![CircleCI](https://circleci.com/gh/HUSTFE/Ugli-UI.svg?style=svg)](https://circleci.com/gh/HUSTFE/Ugli-UI)
+
 > Ugli is a citrus fruit created by hybridizing a grapefruit, an orange, and a tangerine.
 
 Ugli-UI is a mobile UI component Library.
 
 ```bash
 # To create a component
-npm run new react test
+yarn new react test
 
 ```
 ## Start in development mode
